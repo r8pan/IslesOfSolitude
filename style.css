@@ -1,0 +1,242 @@
+html {
+	width: 100%;
+	height: 100%;
+}
+
+@font-face {
+    font-family: customize;
+    src: url("pictures/FZQKBYSJW.TTF"),
+		url("pictures/AGaramondPro-Regular.otf");
+}
+
+body {
+	background-color: black;
+	height: 100%;
+	position: relative;
+	margin: 0px;
+}
+
+#cover {
+	width: 100%;
+	margin: auto;
+	position: absolute;
+	padding: 0;
+	top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+img {
+	display: block;
+	margin: auto;
+	width: 100%;
+}
+
+#main {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	padding: 0;
+	background-image: url("pictures/main_small.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+}
+
+#isle {
+	opacity: 0;
+	position: absolute;
+	width: 6%;
+	height: 6%;
+	left: 8.08%;
+	top: 52%;
+}
+
+#stone {
+	opacity: 0;
+	position: absolute;
+	width: 6%;
+	height: 6%;
+	left: 14.56%;
+	top: 52%;
+}
+
+#leaf {
+	opacity: 0;
+	position: absolute;
+	width: 6%;
+	height: 6%;
+	left: 20.83%;
+	top: 52.05%;
+}
+
+#artist {
+	opacity: 0;
+	position: absolute;
+	width: 6.45%;
+	height: 6.45%;
+	left: 27.3%;
+	top: 52.6%;
+}
+
+#musician {
+	opacity: 0;
+	position: absolute;
+	width: 6.2%;
+	height: 6.2%;
+	left: 34.15%;
+	top: 51.25%;
+}
+
+#space {
+	opacity: 0;
+	position: absolute;
+	width: 5.7%;
+	height: 5.7%;
+	left: 41%;
+	top: 53.1%;
+}
+
+#time {
+	opacity: 0;
+	position: absolute;
+	width: 5.85%;
+	height: 5.85%;
+	left: 47.15%;
+	top: 52.6%;
+}
+
+#mask {
+	opacity: 0;
+	position: absolute;
+	width: 6.3%;
+	height: 6.3%;
+	left: 53.12%;
+	top: 51%;
+}
+
+#prisoner {
+	opacity: 0;
+	position: absolute;
+	width: 6.25%;
+	height: 6.25%;
+	left: 59.65%;
+	top: 51.2%;
+}
+
+#traveler {
+	opacity: 0;
+	position: absolute;
+	width: 5.9%;
+	height: 5.9%;
+	left: 66.4%;
+	top: 53.4%;
+}
+
+#child {
+	opacity: 0;
+	position: absolute;
+	width: 5.75%;
+	height: 5.75%;
+	left: 72.85%;
+	top: 52.75%;
+}
+
+#dream {
+	opacity: 0;
+	position: absolute;
+	width: 5.95%;
+	height: 5.95%;
+	left: 79.2%;
+	top: 52.1%;
+}
+
+#shadow {
+	opacity: 0;
+	position: absolute;
+	width: 5.95%;
+	height: 5.95%;
+	left: 85.45%;
+	top: 52.1%;
+}
+
+#characters {
+	height: 88%;
+}
+
+#info-panel {
+	font-family: customize;
+	width: 90%;
+	height: 80%;
+	margin: 5% 4%;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+}
+
+#close {
+    float: right;
+    display: inline-block;
+    padding: 3px 8px;
+	color: white;
+}
+
+#narrator {
+	position: absolute;
+	left: 26%;
+	top: 1%;
+	width: 2%;
+}
+
+#play_sign {
+	position: absolute;
+	left: 29%;
+	top: 0%;
+	width: 4%;
+	margin-top: 0.67%;
+	color: white;
+}
+
+#canvas_pagination {
+    position: absolute;
+    padding: 3px 3px;
+	color: white;
+	right: 1%;
+	bottom: 1%;
+	margin: 0;
+}
+
+#canvas_pic {
+	opacity: 0;
+	width: 24.8%;
+	height: 100%;
+	position: absolute;
+
+}
+
+#canvas_poem {
+	position: absolute;
+	color: white;
+	width: 50%;
+	height: 60%;
+	text-align: center;
+	left: 44%;
+	top: 42%;
+}
+
+#canvas_sign {
+	visibility: hidden;
+	position: absolute;
+	width: 12%;
+	right: 25.2%;
+	top: 6%;
+
+}
+
+
+
+
+
+
