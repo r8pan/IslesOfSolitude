@@ -1,0 +1,271 @@
+html {
+	width: 100%;
+	height: 100%;
+}
+
+@font-face {
+    font-family: customize;
+    src: url("pictures/AGaramondPro-Regular.otf");
+}
+
+body {
+	background-color: black;
+	position: relative;
+	margin: 0px;
+	width: 100%;
+	height:100%;
+	position: absolute;
+	padding: 0;
+	background-image: url("pictures/bg_blank.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+}
+
+img {
+	display: block;
+	margin: auto;
+	width: 100%;
+}
+
+#rel_link {
+	font-family: customize;
+	float: right;
+	margin-right: 0.5%;
+	margin-top: 2%;
+	color: white;
+	font-size: 100%;
+	cursor: pointer;
+}
+
+#rel_panel {
+	visibility: hidden;
+	position: absolute;
+	width: 84%;
+	height: 96%;
+	left: 8%;
+	top: 2%;
+	background-image: url('pictures/relationship_img.jpg');	
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+#back {
+	visibility: visible;
+	position: absolute;
+	opacity: 0.5;
+	top: 45%;
+	left: 1%;
+	width: 5%;
+}
+
+#next {
+	visibility: visible;
+	position: absolute;
+	opacity: 0.5;
+	top: 45%;
+	right: 1%;
+	width: 5%;
+}
+
+#ra {
+	visibility: visible;
+	position: absolute;
+	width: 86%;
+	height: 94%;
+	left: 7%;
+	top: 3%;
+}
+
+#other_isle {
+	visibility: visible;
+	position: absolute;
+	opacity: 1;
+	width: 10%;
+	left: 3%;
+	top: 33%;
+	cursor: pointer;
+}
+
+#other_fossil {
+	visibility: visible;
+	position: absolute;
+	opacity: 1;
+	width: 10%;
+	left: 15%;
+	top: 20%;
+	cursor: pointer;
+}
+
+#other_leaf {
+	visibility: visible;
+	position: absolute;
+	opacity: 1;
+	width: 10%;
+	left: 27%;
+	top: 20%;
+	cursor: pointer;
+}
+
+#other_artist {
+	visibility: visible;
+	position: absolute;
+	opacity: 1;
+	width: 10%;
+	left: 15%;
+	top: 60%;
+	cursor: pointer;
+}
+
+#other_musician {
+	visibility: visible;
+	position: absolute;
+	opacity: 1;
+	width: 10%;
+	left: 27%;
+	top: 60%;
+	cursor: pointer;
+}
+
+#other_space {
+	visibility: visible;
+	position: absolute;
+	opacity: 1;
+	width: 10%;
+	left: 39%;
+	top: 60%;
+	cursor: pointer;
+}
+
+#other_time {
+	visibility: visible;
+	position: absolute;
+	opacity: 1;
+	width: 10%;
+	left: 39%;
+	top: 20%;
+	cursor: pointer;
+}
+
+#other_mask {
+	visibility: visible;
+	position: absolute;
+	opacity: 1;
+	width: 10%;
+	left: 51%;
+	top: 20%;
+	cursor: pointer;
+}
+
+#other_prisoner {
+	visibility: visible;
+	position: absolute;
+	opacity: 1;
+	width: 10%;
+	left: 63%;
+	top: 20%;
+	cursor: pointer;
+}
+
+#other_traveler {
+	visibility: visible;
+	position: absolute;
+	opacity: 1;
+	width: 10%;
+	left: 51%;
+	top: 60%;
+	cursor: pointer;
+}
+
+#other_child {
+	visibility: visible;
+	position: absolute;
+	opacity: 1;
+	width: 10%;
+	left: 63%;
+	top: 60%;
+	cursor: pointer;
+}
+
+#other_dream {
+	visibility: visible;
+	position: absolute;
+	opacity: 1;
+	width: 10%;
+	left: 75%;
+	top: 60%;
+	cursor: pointer;
+}
+
+#other_shadow {
+	visibility: visible;
+	position: absolute;
+	opacity: 1;
+	width: 10%;
+	left: 75%;
+	top: 20%;
+	cursor: pointer;
+}
+
+#other_3d {
+	visibility: visible;
+	position: absolute;
+	opacity: 1;
+	width: 10%;
+	left: 87%;
+	top: 42%;
+	cursor: pointer;
+}
+
+#other_img {
+	position: absolute;
+	width: 50%;
+	height: 88%;
+	left: 30%;
+	top: 2%;
+	background-color: blue;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+#other_left {
+	visibility: hidden;
+	position: absolute;
+	opacity: 0.5;
+	top: 46.4%;
+	left: 2.5%;
+	width: 3%;
+}
+
+#other_right {
+	visibility: hidden;
+	position: absolute;
+	opacity: 0.5;
+	top: 46.4%;
+	right: 2.5%;
+	width: 3%;
+}
+
+#other_caption {
+	font-family: customize;
+	position: absolute;
+	visibility: hidden;
+	width: 14%;
+	height: 10%;
+	left: 33%;
+	top: 82.6%;
+	color: white;
+	font-size: 100%;
+}
+
+#title_other {
+	font-family: customize;
+	visibility: visible;
+	position: absolute;
+	width: 30%;
+	height: 6%;
+	left: 39.5%;
+	top: 87%;
+	color: white;
+	font-size: 144%;
+}

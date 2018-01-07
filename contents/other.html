@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style_other.css">
+		<title>Isles of Solitude</title>
+	</head>
+	<body id = "main" onresize = "changeOther(charNum);">
+		<p id = "rel_link" onclick = "document.getElementById('rel_panel').style.visibility='visible';document.getElementById('back').style.visibility='hidden';
+						document.getElementById('next').style.visibility='hidden';document.getElementById('main').style.backgroundImage='none';
+						document.getElementById('title_other').style.visibility='hidden';document.getElementById('ra').style.visibility='hidden';hideOther();">Relationships</p>
+		<div id = "rel_panel" style = "visibility: hidden;">
+			<img id = "rel_close" src = "pictures/close_white.png" alt = "close" style = "position:absolute;top:1.2%;right:0.7%;width:1.2%;cursor: pointer;" onclick = "document.getElementById('rel_panel').style.visibility='hidden';
+						document.getElementById('back').style.visibility='visible';
+						document.getElementById('title_other').style.visibility='visible';
+						document.getElementById('next').style.visibility='visible';
+						document.getElementById('ra').style.visibility='visible';
+						document.getElementById('main').style.backgroundImage='url(&quot;pictures/bg_blank.jpg&quot;)';showOther();" />
+		</div>
+		<div id = "back" onmouseover = "document.getElementById('back').style.opacity=1;" onmouseout = "document.getElementById('back').style.opacity=0.5;">
+			<a href="map.html">
+				<img src = "pictures/back.png" />
+			</a>
+		</div>
+		<div id = "next" onmouseover = "document.getElementById('next').style.opacity=1;" onmouseout = "document.getElementById('next').style.opacity=0.5;">
+			<a href="home.html">
+				<img src = "pictures/next.png" />
+			</a>
+		</div>
+		<div id = "other_left" onmouseover = "document.getElementById('other_left').style.opacity=1;" onmouseout = "document.getElementById('other_left').style.opacity=0.5;" onclick = "changeOther(charNum-1);">
+			<img src = "pictures/back.png" />
+		</div>
+		<div id = "other_right" onmouseover = "document.getElementById('other_right').style.opacity=1;" onmouseout = "document.getElementById('other_right').style.opacity=0.5;" onclick = "changeOther(charNum+1);">
+			<img src = "pictures/next.png" />
+		</div>
+		<div id = "ra">
+			<img id = "other_isle" src = "pictures/other/isle_other_small.jpg" alt = "isle" onclick = "changeOther(0);" />
+			<img id = "other_fossil" src = "pictures/other/fossil_other_small.jpg" alt = "fossil" onclick = "changeOther(1);" />
+			<img id = "other_leaf" src = "pictures/other/leaf_other_small.jpg" alt = "leaf" onclick = "changeOther(2);" />
+			<img id = "other_artist" src = "pictures/other/artist_other_small.jpg" alt = "artist" onclick = "changeOther(3);" />
+			<img id = "other_musician" src = "pictures/other/musician_other_small.jpg" alt = "musician" onclick = "changeOther(4);" />
+			<img id = "other_space" src = "pictures/other/space_other_small.jpg" alt = "space" onclick = "changeOther(5);" />
+			<img id = "other_time" src = "pictures/other/time_other_small.jpg" alt = "time" onclick = "changeOther(6);" />
+			<img id = "other_mask" src = "pictures/other/mask_other_small.jpg" alt = "mask" onclick = "changeOther(7);" />
+			<img id = "other_prisoner" src = "pictures/other/prisoner_other_small.jpg" alt = "prisoner" onclick = "changeOther(8);" />
+			<img id = "other_traveler" src = "pictures/other/traveler_other_small.jpg" alt = "traveler" onclick = "changeOther(9);" />
+			<img id = "other_child" src = "pictures/other/child_other_small.jpg" alt = "child" onclick = "changeOther(10);" />
+			<img id = "other_dream" src = "pictures/other/dream_other_small.jpg" alt = "dream" onclick = "changeOther(11);" />
+			<img id = "other_shadow" src = "pictures/other/shadow_other_small.jpg" alt = "shadow" onclick = "changeOther(12);" />
+			<img id = "other_3d" src = "pictures/other/3d_other_small.jpg" alt = "Puppet" onclick = "changeOther(13);" />
+		</div>
+		<div id = "other_img" style = "visibility: hidden;">
+			<img id = "other_close" src = "pictures/close_black.png" alt = "close" style = "position:absolute;top:1.5%;right:1%;width:2.5%;cursor: pointer;" onclick = "document.getElementById('other_img').style.visibility='hidden'; 
+				document.getElementById('rel_link').style.visibility = 'visible';document.getElementById('other_caption').style.visibility='hidden'; charNum = -1;
+				document.getElementById('back').style.visibility = 'visible';document.getElementById('next').style.visibility = 'visible';
+				document.getElementById('other_left').style.visibility = 'hidden';document.getElementById('other_right').style.visibility = 'hidden';
+				for (var i = 0; i <= 13; i++) {
+					document.getElementById('other_'+charSource[i]).style.opacity = 1;
+				}" />	
+		</div>
+		<div id = "other_caption" sytle = "visibility: hidden;">
+			<p id = "caption">caption</p>
+		</div>
+		<div id = "title_other">
+			<p>RELATED ARTWORKS</p>
+		</div>
+		<script>
+			var charSource = ['isle', 'fossil', 'leaf', 'artist', 'musician', 'space', 'time', 'mask', 'prisoner', 'traveler', 'child', 'dream', 'shadow','3d'];
+			var otherSrc = [
+				'url(pictures/other/isle_other.jpg)',
+				'url(pictures/other/fossil_other.jpg)',
+				'url(pictures/other/leaf_other.jpg)',
+				'url(pictures/other/artist_other.jpg)',
+				'url(pictures/other/musician_other.jpg)',
+				'url(pictures/other/space_other.jpg)',
+				'url(pictures/other/time_other.jpg)',
+				'url(pictures/other/mask_other.jpg)',
+				'url(pictures/other/prisoner_other.jpg)',
+				'url(pictures/other/traveler_other.jpg)',
+				'url(pictures/other/child_other.jpg)',
+				'url(pictures/other/dream_other.jpg)',
+				'url(pictures/other/shadow_other.jpg)',
+				'url(pictures/other/3d_other.jpg)'
+			];
+			var capSrc = [
+				"<i>0. ISLE</i></br>Oil on Canvas</br>76 * 50 cm",
+				"<i>1. FOSSILS</i></b></br>Drawing on Paper</br>260 * 88 cm",
+				"<i>2. LEAF</i><br>Etching Print</br>17 * 13 cm",
+				"<i>3. ARTIST</i></br>Oil Pastel</br>57 * 42 cm",
+				"<i>4. MUSICIAN</i></br>Gouache</br>38 * 27 cm",
+				"<i>5. SPACE</i></br>Watercolour</br>57 * 42 cm",
+				"<i>6. TIME</i></br>Pencil</br>53 * 38 cm",
+				"<i>7. MASK</i></br>Handcraft Mask with Book Pages</br>21 * 29 cm",
+				"<i>8. PRISONER</i></br>Drawing on Paper</br>57 * 42 cm",
+				"<i>9. TRAVELER</i></br>Watercolour + Photoshop</br>27 * 21 cm",
+				"<i>10. CHILD</i></br>Oil Pastel</br>38 * 27 cm",
+				"<i>11. DREAM</i></br>Watercolour</br>27 * 27 cm",
+				"<i>12. SHADOW</i></br>Drawing on Paper</br>38 * 27 cm",
+				"<i>13. Handmade Figures</i></br>Fimo</br>8 * 2.5 * 2.5 cm"
+			];
+			var charNum = -1;
+			function changeOther(id) {
+				var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+				var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+				console.log(id);
+				if (id == -1) id = 13;
+				if (id == 14) id = 0;
+				charNum = id;
+				document.getElementById('other_caption').style.width = '14%';
+				document.getElementById('other_caption').style.fontSize = '100%';
+				switch(id) {
+					case 0:
+						document.getElementById('other_img').style.width = '32.4%';
+						document.getElementById('other_img').style.left = '33.8%';
+						document.getElementById('other_caption').style.left = '72.5%';
+						document.getElementById('other_caption').style.top = '40%';
+						document.getElementById('other_close').src = 'pictures/close_black.png';
+						document.getElementById('other_close').style.top = '1%';
+						document.getElementById('other_close').style.right = '1%';
+						document.getElementById('other_close').style.width = '3.5%';
+						break;
+					case 1:
+						document.getElementById('other_img').style.width = '71.1%';
+						document.getElementById('other_img').style.left = '14.4%';
+						document.getElementById('other_caption').style.left = '86%';
+						document.getElementById('other_caption').style.top = '70%';
+						document.getElementById('other_close').src = 'pictures/close_black.png';
+						document.getElementById('other_close').style.top = '2%';
+						document.getElementById('other_close').style.right = '1%';
+						document.getElementById('other_close').style.width = '1.5%';
+						break;
+					case 2:
+						document.getElementById('other_img').style.width = '33.6%';
+						document.getElementById('other_img').style.left = '33.2%';
+						document.getElementById('other_caption').style.left = '72.5%';
+						document.getElementById('other_caption').style.top = '40%';
+						document.getElementById('other_close').src = 'pictures/close_black.png';
+						document.getElementById('other_close').style.top = '1%';
+						document.getElementById('other_close').style.right = '1%';
+						document.getElementById('other_close').style.width = '3.5%';
+						break;
+					case 3:
+						document.getElementById('other_img').style.width = '29.4%';
+						document.getElementById('other_img').style.left = '35.3%';
+						document.getElementById('other_caption').style.left = '72.5%';
+						document.getElementById('other_caption').style.top = '40%';
+						document.getElementById('other_close').src = 'pictures/close_black.png';
+						document.getElementById('other_close').style.top = '3%';
+						document.getElementById('other_close').style.right = '3.2%';
+						document.getElementById('other_close').style.width = '3.5%';
+						break;
+					case 4:
+						document.getElementById('other_img').style.width = '59.9%';
+						document.getElementById('other_img').style.left = '20%';
+						document.getElementById('other_caption').style.left = '83%';
+						document.getElementById('other_caption').style.top = '70%';
+						document.getElementById('other_close').src = 'pictures/close_white.png';
+						document.getElementById('other_close').style.top = '3%';
+						document.getElementById('other_close').style.right = '2.2%';
+						document.getElementById('other_close').style.width = '2.2%';
+						break;
+					case 5:
+						document.getElementById('other_img').style.width = '66.9%';
+						document.getElementById('other_img').style.left = '16.5%';
+						document.getElementById('other_caption').style.left = '84%';
+						document.getElementById('other_caption').style.top = '70%';
+						document.getElementById('other_close').src = 'pictures/close_white.png';
+						document.getElementById('other_close').style.top = '4%';
+						document.getElementById('other_close').style.right = '2%';
+						document.getElementById('other_close').style.width = '2.2%';
+						break;
+					case 6:
+						document.getElementById('other_img').style.width = '57%';
+						document.getElementById('other_img').style.left = '21.5%';
+						document.getElementById('other_caption').style.left = '83%';
+						document.getElementById('other_caption').style.top = '70%';
+						document.getElementById('other_close').src = 'pictures/close_black.png';
+						document.getElementById('other_close').style.top = '3%';
+						document.getElementById('other_close').style.right = '2.2%';
+						document.getElementById('other_close').style.width = '2.2%';
+						break;
+					case 7:
+						document.getElementById('other_img').style.width = '30.7%';
+						document.getElementById('other_img').style.left = '34.6%';
+						document.getElementById('other_caption').style.left = '20%';
+						document.getElementById('other_caption').style.top = '42%';
+						document.getElementById('other_close').src = 'pictures/close_white.png';
+						document.getElementById('other_close').style.top = '3%';
+						document.getElementById('other_close').style.right = '3.2%';
+						document.getElementById('other_close').style.width = '3.5%';
+						break;
+					case 8:
+						document.getElementById('other_img').style.width = '28.7%';
+						document.getElementById('other_img').style.left = '35.6%';
+						document.getElementById('other_caption').style.left = '72%';
+						document.getElementById('other_caption').style.top = '40%';
+						document.getElementById('other_close').src = 'pictures/close_black.png';
+						document.getElementById('other_close').style.top = '3%';
+						document.getElementById('other_close').style.right = '3.2%';
+						document.getElementById('other_close').style.width = '3.5%';
+						break;
+					case 9:
+						document.getElementById('other_img').style.width = '61.9%';
+						document.getElementById('other_img').style.left = '19%';
+						document.getElementById('other_caption').style.left = '82.5%';
+						document.getElementById('other_caption').style.top = '70%';
+						document.getElementById('other_caption').style.width = '16%';
+						document.getElementById('other_close').src = 'pictures/close_white.png';
+						document.getElementById('other_close').style.top = '3%';
+						document.getElementById('other_close').style.right = '2.2%';
+						document.getElementById('other_close').style.width = '2.2%';
+						break;	
+					case 10:
+						document.getElementById('other_img').style.width = '60%';
+						document.getElementById('other_img').style.left = '20%';
+						document.getElementById('other_caption').style.left = '83%';
+						document.getElementById('other_caption').style.top = '70%';
+						document.getElementById('other_close').src = 'pictures/close_white.png';
+						document.getElementById('other_close').style.top = '3.8%';
+						document.getElementById('other_close').style.right = '2.2%';
+						document.getElementById('other_close').style.width = '2.2%';
+						break;	
+					case 11:
+						document.getElementById('other_img').style.width = '42.1%';
+						document.getElementById('other_img').style.left = '28.9%';
+						document.getElementById('other_caption').style.left = '72.5%';
+						document.getElementById('other_caption').style.top = '40%';
+						document.getElementById('other_close').src = 'pictures/close_white.png';
+						document.getElementById('other_close').style.top = '3%';
+						document.getElementById('other_close').style.right = '2.5%';
+						document.getElementById('other_close').style.width = '3%';
+						break;	
+					case 12:
+						document.getElementById('other_img').style.width = '57.9%';
+						document.getElementById('other_img').style.left = '21%';
+						document.getElementById('other_caption').style.left = '82.5%';
+						document.getElementById('other_caption').style.top = '70%';
+						document.getElementById('other_close').src = 'pictures/close_black.png';
+						document.getElementById('other_close').style.top = '0.8%';
+						document.getElementById('other_close').style.right = '0.4%';
+						document.getElementById('other_close').style.width = '2%';
+						break;
+					case 13:
+						document.getElementById('other_img').style.width = '72.5%';
+						document.getElementById('other_img').style.left = '13.7%';
+						document.getElementById('other_caption').style.left = '87%';
+						document.getElementById('other_caption').style.fontSize = '84%';
+						document.getElementById('other_caption').style.top = '68%';
+						document.getElementById('other_caption').style.width = '12.5%';
+						document.getElementById('other_close').src = 'pictures/close_black.png';
+						document.getElementById('other_close').style.top = '1.5%';
+						document.getElementById('other_close').style.right = '0.8%';
+						document.getElementById('other_close').style.width = '1.5%';
+						break;
+				}
+				for (var i = 0; i <= 13; i++) {
+					document.getElementById('other_'+charSource[i]).style.opacity = 0.02;
+				}
+				//document.getElementById('other_img').style.height = '88%';
+				var adjustedHeight = (0.88+(width/height-2.0813)/2.5)*100+"%";
+				document.getElementById('other_img').style.height = adjustedHeight;
+				document.getElementById('other_img').style.visibility = 'visible';
+				document.getElementById('other_img').style.backgroundImage = otherSrc[id];
+				document.getElementById('other_caption').style.visibility = 'visible';
+				document.getElementById('caption').innerHTML = capSrc[id];
+				document.getElementById('rel_link').style.visibility = 'hidden';
+				document.getElementById('other_left').style.visibility = 'visible';
+				document.getElementById('other_right').style.visibility = 'visible';
+				document.getElementById('back').style.visibility = 'hidden';
+				document.getElementById('next').style.visibility = 'hidden';
+			}
+			function showOther() {
+				var i = 0;
+				for (i = 0; i <= 13; i++) {
+					document.getElementById('other_'+charSource[i]).style.opacity = 1;
+				}
+			}
+			function hideOther() {
+				var i = 0;
+				for (i = 0; i <= 13; i++) {
+					document.getElementById('other_'+charSource[i]).style.opacity = 0;
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style_home.css">
+		<title>Isles of Solitude</title>
+	</head>
+	<body id = "main" onload = "document.getElementById('rel_panel').style.visibility='hidden';">
+		<div id = "characters">
+			<p id = "rel_link" onclick = "document.getElementById('rel_panel').style.visibility='visible';document.getElementById('back').style.visibility='hidden';
+						document.getElementById('next').style.visibility='hidden';document.getElementById('main').style.backgroundImage='none';document.getElementById('title_character').style.visibility='hidden';">Relationships</p>
+			<div id = "rel_panel">
+				<img id = "rel_close" src = "pictures/close_white.png" alt = "close" style = "position:absolute;top:1.2%;right:0.7%;width:1.2%;cursor: pointer;" 
+				onclick = "document.getElementById('rel_panel').style.visibility='hidden';document.getElementById('back').style.visibility='visible';document.getElementById('title_character').style.visibility='visible';
+						document.getElementById('next').style.visibility='visible';document.getElementById('main').style.backgroundImage='url(&quot;pictures/main_small.jpg&quot;)';" />
+			</div>
+			<div id = "back" onmouseover = "document.getElementById('back').style.opacity=1;" onmouseout = "document.getElementById('back').style.opacity=0.5;">
+				<a href="other.html">
+					<img src = "pictures/back.png" />
+				</a>
+			</div>
+			<div id = "next" onmouseover = "document.getElementById('next').style.opacity=1;" onmouseout = "document.getElementById('next').style.opacity=0.5;">
+				<a href="map.html">
+					<img src = "pictures/next.png" />
+				</a>
+			</div>
+			<div id = "info-panel" style = "visibility: hidden">
+				<audio id = "audio_play" type="audio/mp4"></audio>
+				<!--
+				<p id = "play_sign" onclick = "document.getElementById('audio_play').play();" onmouseover = "changeSign()" onmouseout = "getElementById('canvas_sign').style.visibility='hidden';">play</p>
+				<img id = "narrator" onclick = "document.getElementById('audio_play').play();" onmouseover = "changeSign()" onmouseout = "getElementById('canvas_sign').style.visibility='hidden';"/>
+				-->
+				<img id = "close" src = "pictures/close_white.png" alt = "close" onclick = "
+					getElementById('info-panel').style.visibility='hidden';
+					getElementById('canvas_sign').style.visibility='hidden';
+					getElementById('canvas_pic').style.opacity=0;
+					getElementById('left').style.visibility='hidden';
+					getElementById('right').style.visibility='hidden';document.getElementById('rel_link').style.visibility = 'visible';
+					showChar();
+					document.getElementById('audio_play').pause(); " style = "cursor: pointer;" onmouseover = "changeSign()" onmouseout = "getElementById('canvas_sign').style.visibility='hidden';" />
+				<img id = "canvas_pic" src = "" alt = "" onmouseover = "changeSign()" onmouseout = "getElementById('canvas_sign').style.visibility='hidden';"/>
+				<img id = "canvas_sign" src = "" alt = "" />
+				<div id = "canvas_poem">					
+				</div>
+				<div id = "canvas_pagination" onmouseover = "changeSign()" onmouseout = "getElementById('canvas_sign').style.visibility='hidden';">
+					<span id = "left" style = "visibility: hidden;cursor: pointer;font-size:150%;" onclick = "changeCanvas(parseInt(document.getElementById('canvas_pgNum').innerHTML) - 1)"><&nbsp;</span>
+					<span id = "right" style = "visibility: hidden;cursor: pointer;font-size:150%;" onclick = "changeCanvas(parseInt(document.getElementById('canvas_pgNum').innerHTML) + 1)">>&ensp;</span>
+					<span id = "canvas_pgNum"></span>
+				</div>
+			</div>
+			<div className = "character" id = "isle" onmouseover = "showCharacter(0);" onmouseout = "hideCharacter(0)" onclick = "changeCanvas(0);">			
+				<img src = "pictures/isle_small.png" />
+			</div>
+			<div className = "character" id = "fossil" onmouseover = "showCharacter(1)" onmouseout = "hideCharacter(1)" onclick = "changeCanvas(1)">
+				<img src = "pictures/fossil_small.png" />
+			</div>
+			<div className = "character" id = "leaf" onmouseover = "showCharacter(2)" onmouseout = "hideCharacter(2)" onclick = "changeCanvas(2)">
+				<img src = "pictures/leaf_small.png" />
+			</div>
+			<div className = "character" id = "artist" onmouseover = "showCharacter(3)" onmouseout = "hideCharacter(3)" onclick = "changeCanvas(3)">			
+				<img src = "pictures/artist_small.png" />
+			</div>
+			<div className = "character" id = "musician" onmouseover = "showCharacter(4)" onmouseout = "hideCharacter(4)" onclick = "changeCanvas(4)">
+				<img src = "pictures/musician_small.png" />
+			</div>
+			<div className = "character" id = "space" onmouseover = "showCharacter(5)" onmouseout = "hideCharacter(5)" onclick = "changeCanvas(5)">
+				<img src = "pictures/space_small.png" />
+			</div>
+			<div className = "character" id = "time" onmouseover = "showCharacter(6)" onmouseout = "hideCharacter(6)" onclick = "changeCanvas(6)">
+				<img src = "pictures/time_small.png" />
+			</div>
+			<div className = "character" id = "mask" onmouseover = "showCharacter(7)" onmouseout = "hideCharacter(7)" onclick = "changeCanvas(7)">
+				<img src = "pictures/mask_small.png" />
+			</div>
+			<div className = "character" id = "prisoner" onmouseover = "showCharacter(8)" onmouseout = "hideCharacter(8)" onclick = "changeCanvas(8)">
+				<img src = "pictures/prisoner_small.png" />
+			</div>
+			<div className = "character" id = "traveler" onmouseover = "showCharacter(9)" onmouseout = "hideCharacter(9)" onclick = "changeCanvas(9)">
+				<img src = "pictures/traveler_small.png" />
+			</div>
+			<div className = "character" id = "child" onmouseover = "showCharacter(10)" onmouseout = "hideCharacter(10)" onclick = "changeCanvas(10)">
+				<img src = "pictures/child_small.png" />
+			</div>
+			<div className = "character" id = "dream" onmouseover = "showCharacter(11)" onmouseout = "hideCharacter(11)" onclick = "changeCanvas(11)">
+				<img src = "pictures/dream_small.png" />
+			</div>
+			<div className = "character" id = "shadow" onmouseover = "showCharacter(12)" onmouseout = "hideCharacter(12)" onclick = "changeCanvas(12)">
+				<img src = "pictures/shadow_small.png" />
+			</div>
+		</div>
+		<div id = "title_character">
+			<p>CHARACTERS</p>
+		</div>
+		<script>
+			var adaptedTop;
+			var charSource = ['isle', 'fossil', 'leaf', 'artist', 'musician', 'space', 'time', 'mask', 'prisoner', 'traveler', 'child', 'dream', 'shadow'];
+			var BGSource = [
+				'url(pictures/bg_isle.jpg)',
+				'url(pictures/bg_fossil.jpg)',
+				'url(pictures/bg_leaf.jpg)',
+				'url(pictures/bg_artist.jpg)',
+				'url(pictures/bg_musician.jpg)',
+				'url(pictures/bg_space.jpg)',
+				'url(pictures/bg_time.jpg)',
+				'url(pictures/bg_mask.jpg)',
+				'url(pictures/bg_prisoner.jpg)',
+				'url(pictures/bg_traveler.jpg)',
+				'url(pictures/bg_child.jpg)',
+				'url(pictures/bg_dream.jpg)',
+				'url(pictures/bg_shadow.jpg)'
+			];
+			var cbgSource = [
+				'url(pictures/isle_bg.jpg)',
+				'url(pictures/fossil_bg.jpg)',
+				'url(pictures/leaf_bg.jpg)',
+				'url(pictures/artist_bg.jpg)',
+				'url(pictures/musician_bg.jpg)',
+				'url(pictures/space_bg.jpg)',
+				'url(pictures/time_bg.jpg)',
+				'url(pictures/mask_bg.jpg)',
+				'url(pictures/prisoner_bg.jpg)',
+				'url(pictures/traveler_bg.jpg)',
+				'url(pictures/child_bg.jpg)',
+				'url(pictures/dream_bg.jpg)',
+				'url(pictures/shadow_bg.jpg)'
+			];
+			var poemList = [
+				"<p>In my soul, there\'s an Isle deep inside,</br></br>where ordinary ships could not come by,</br></br>where large crowds would not occupy.</br></br>Yet you,</br></br>have lived here,</br></br>all my life.</p>",
+				"<p>For thousands of years this silent stone giant,</br>standing in the ocean, overlooking this island.</br></br>Walking among the walls of fossils,</br>wading through the river of silence.</br></br>All he has ever loved becomes an eternal fossil eventually,</br>and to be a king is his destiny.</br></br>During endless battles he has been guarding this place alone,</br>with the eyes of still water,</br>and a heart of stone.</p>",
+				"<p>Every quiet forest mountain,</br></br>is full of each leaf\'s resonation.</br></br></br>I think I heard you,</br></br>through a leaf\'s echo.</p>",
+				"<p>The little artist was born in a wheatfield of gold,</br></br>just like where the deceased artist had painted his last work without notes.</br></br></br>Only this time,</br></br>no matter how many hovering crows,</br></br>and however long the distance is till the end of road;</br></br>she will continue to smile and paint their darkness,</br></br>before the first sunlight glows.</p>",
+				"<p>One song\'s loneliness, consists of countless notes.</br></br>Let me play my music solo,</br></br>on this nameless highroad.</p>",
+				"<p>When he was little his grandma once said,</br>that every perished life,</br>will turn into a star in the sky,</br>and keep shining day and night.</br></br>Now he is going to be an astronaut in space,</br>to find the star that has his grandma’s trace.</br></br>Alone in the vast universe floating,</br>his spaceship is not the only one illuminating.</br>Behind him, an infinity of stars are shinning.</br></br>During the endless search, he saw the end of the universe;</br>the live\'s demise and birth,</br>and the voice of grandma coming from the star near earth.</p>",
+				"<p>That old solider who doesn\'t really talk,</br>often sits alone in the attic, and listens to the clock.</br></br>\"Tik tok, tik tok, tik tok…\"</br></br>He recalls,</br>the tarnished photo in his old uniforms,</br>the promise that they made in the sound of the clock:</br>\"Fight side by side, and go home together.\"</br>But my dear boy, why did you let the promise fall ?</br></br>All the cars come and go on the street,</br>the old solider listens to the clock repeat.</p>",
+				"<p>Every book that one has read,</br>becomes a mask on one\'s face.</br></br>Begin the first chapter and flip the page,</br>to start tailoring the perfect mask face.</br>Watching behind a mask and won\'t engage,</br>one\'s solo performance on life\'s stage.</br></br>A mask that cannot be erased,</br>one\'s self that cannot be faced.</br></br>Is this mask in the book,</br>a shield to protect, or a mirror to look ?</p>",
+				"<p><b><i>Prisoner\'s Bird</i></b></br></br></br>She stood surely on the prisoner\'s shoulder,</br>in this prison that doesn\'t belong to her.</br></br>She has her wings, so why not fly away ?</br>There is a way out, so why not long to be free ?</br></br> She just wants to stay like this forever</br>to accompany the prisoner.</br>Like the day she fell from her nest,</br>he caught her.</p>",
+				"<p>Growth is one\'s treasure hunting journey,</br>to find oneself, to find thee.</br></br>With a compass in hand, with an adventure in need;</br>with lighthouses that shine, with stars that lead.</br></br>Ride with the wind, sail across the sea;</br>walk among the thorns, swim against the waves.</br></br>Whether one sail a boat or walk on one\'s feet,</br>all the soulmates will eventually meet.</p>",
+				"<p>She always stays in the empty carnival train,</br></br>to take it over and over again.</br></br>Together with the muppet in her arms she wishes fain:</br></br>The next stop,</br></br>will be the everlasting childhood lane.</p>",
+				"<p>Chuang-Tzu and the Emperor Qin,</br>went back to the past lives through dreaming.</br></br>The mermaid lamp and the butterfly wing,</br>the everlasting light and the dreams ring.</br></br>The soul went to reincarnation,</br>and the body remained in immortality.</br>This drifting life is like a whimsicality,</br>half is illusion and half is reality.</p>",
+				"<p>Once solved the most complex formula,</br>once proved the most abstruse theory,</br>still he cannot decipher the puzzle of his own obscurity.</br></br>Can one use an equation, to summarize the law of humanity ?</br>Can one use a shadow, to reflect one's true identity ?</br></br>Physical or psychological,</br>which one is defining ?</br></br>When one\'s reflection differs from one\'s identity,</br>Even his own shadow can get lonely.</p>"
+			];
+			var cardSource = [
+				'pictures/isle_card.jpg',
+				'pictures/fossil_card.jpg',
+				'pictures/leaf_card.jpg',
+				'pictures/artist_card.jpg',
+				'pictures/musician_card.jpg',
+				'pictures/space_card.jpg',
+				'pictures/time_card.jpg',
+				'pictures/mask_card.jpg',
+				'pictures/prisoner_card.jpg',
+				'pictures/traveler_card.jpg',
+				'pictures/child_card.jpg',
+				'pictures/dream_card.jpg',
+				'pictures/shadow_card.jpg'
+			];
+			var signSource = [
+				'pictures/isle_sign.png',
+				'pictures/fossil_sign.png',
+				'pictures/leaf_sign.png',
+				'pictures/artist_sign.png',
+				'pictures/musician_sign.png',
+				'pictures/space_sign.png',
+				'pictures/time_sign.png',
+				'pictures/mask_sign.png',
+				'pictures/prisoner_sign.png',
+				'pictures/traveler_sign.png',
+				'pictures/child_sign.png',
+				'pictures/dream_sign.png',
+				'pictures/shadow_sign.png'
+			];
+			var narSource = ["pictures/isle_audio.m4a",
+				"pictures/fossil_audio.m4a",
+				"pictures/leaf_audio.m4a",
+				"pictures/artist_audio.m4a",
+				"pictures/musician_audio.m4a",
+				"pictures/space_audio.m4a",
+				"pictures/time_audio.m4a",
+				"pictures/mask_audio.m4a",
+				"pictures/prisoner_audio.m4a",
+				"pictures/traveler_audio.m4a",
+				"pictures/child_audio.m4a",
+				"pictures/dream_audio.m4a",
+				"pictures/shadow_audio.m4a"
+			];			
+			function changeCanvas(num) {
+				if (num == 0) {
+					//document.getElementById('play_sign').style.visibility = 'visible';
+					//document.getElementById('narrator').style.visibility = 'visible';
+				}
+				else {
+					//document.getElementById('play_sign').style.visibility = 'hidden';
+					//document.getElementById('narrator').style.visibility = 'hidden';
+				}
+				if (num == 11) {
+					document.getElementById('canvas_poem').style.lineHeight = "132%";
+				}
+				else if (num == 1) {
+					document.getElementById('canvas_poem').style.lineHeight = "112%";
+				}
+				else {
+					document.getElementById('canvas_poem').style.lineHeight = "100%";
+				}
+				if (num == 12) {	
+					//document.getElementById('play_sign').style.color = "black";
+					document.getElementById('close').src = "pictures/close_black.png";
+					document.getElementById('canvas_poem').style.color = "black";
+					document.getElementById('canvas_pagination').style.color = "black";
+					//document.getElementById('narrator').src = "pictures/play_black.png";
+				}
+				else {
+					document.getElementById('info-panel').style.color = "white";
+					document.getElementById('close').src = "pictures/close_white.png";
+					document.getElementById('canvas_poem').style.color = "white";
+					//document.getElementById('play_sign').style.color = "white";
+					document.getElementById('canvas_pagination').style.color = "white";
+					//document.getElementById('narrator').src = "pictures/play.png";
+					document.getElementById('canvas_poem').style.fontSize = "100%";
+				}
+				document.getElementById('canvas_poem').style.fontSize = "100%";
+				document.getElementById('audio_play').pause();
+				document.getElementById('audio_play').src = narSource[num];
+				document.getElementById('left').style.visibility = 'visible';
+				document.getElementById('right').style.visibility = 'visible';
+				if (num == 0) { 
+					document.getElementById('left').style.visibility = 'hidden';
+				}
+				if (num == 12) { 
+					document.getElementById('right').style.visibility = 'hidden';
+				}
+				document.getElementById('canvas_pic').src = cardSource[num];				
+				document.getElementById('info-panel').style.backgroundImage = cbgSource[num];
+				document.getElementById('canvas_sign').src = signSource[num];
+				document.getElementById('canvas_poem').innerHTML = poemList[num];
+				document.getElementById('canvas_pgNum').innerHTML = num;
+				document.getElementById(charSource[num]).style.opacity = 0;				
+				document.getElementById('info-panel').style.visibility = 'visible';							
+				document.getElementById('canvas_pic').style.opacity = 1;	
+				document.getElementById('rel_link').style.visibility = 'hidden';	
+				for (var i = 0; i < 13; i++) {
+					document.getElementById(charSource[i]).style.visibility = 'hidden';		
+				}
+			}
+			function changeSign() {
+				document.getElementById('canvas_sign').style.visibility = 'visible';
+			}
+			function showCharacter(id) {
+				//console.log(document.getElementById('info-panel').style.visibility == 'hidden');
+				console.log(document.getElementById('rel_panel').style.visibility);
+				if (document.getElementById('info-panel').style.visibility == 'hidden' && document.getElementById('rel_panel').style.visibility == 'hidden') {
+					console.log("if true");
+					var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+					var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+					var pHeight;
+					var ratio = 2.0813;
+					var divident = 100;
+					switch (id) {
+						case 0:
+							pHeight = 0.526;
+							break;
+						case 1:
+							pHeight = 0.525;
+							break;
+						case 2:
+							pHeight = 0.526;
+							break;
+						case 3:
+							pHeight = 0.531;
+							divident = 80;
+							break;
+						case 4:
+							pHeight = 0.5175;
+							//ratio = 2.08;
+							divident = 160;
+							break;
+						case 5:
+							pHeight = 0.535;
+							divident = 70;
+							break;
+						case 6:
+							pHeight = 0.532;
+							divident = 80;
+							break;
+						case 7:
+							pHeight = 0.515;
+							divident = 200;
+							break;
+						case 8:
+							pHeight = 0.519;
+							divident = 160;
+							break;
+						case 9:
+							pHeight = 0.54;
+							divident = 60;
+							break;
+						case 10:
+							pHeight = 0.533;
+							divident = 75;
+							break;
+						case 11:
+							pHeight = 0.526;
+							break;
+						case 12:
+							pHeight = 0.525;
+							break;
+					}
+					adaptedTop = (pHeight+(width/height-ratio)/divident)*100+"%";
+					console.log(width + " " + height + " " + width/height);
+					console.log(adaptedTop);
+					document.getElementById(charSource[id]).style.top = adaptedTop;
+					document.getElementById(charSource[id]).style.opacity = 1;
+				}
+			}
+			function hideCharacter(id) {
+				document.getElementById(charSource[id]).style.opacity = 0;
+			}
+			function showChar() {
+				for (var i = 0; i < 13; i++) {
+					document.getElementById(charSource[i]).style.visibility = 'visible';		
+				}
+			}
+		</script>
+	</body>
+</html>

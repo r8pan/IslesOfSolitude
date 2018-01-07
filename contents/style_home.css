@@ -1,0 +1,298 @@
+html {
+	width: 100%;
+	height: 100%;
+}
+
+@font-face {
+    font-family: customize;
+    src: url("pictures/AGaramondPro-Regular.otf");
+}
+
+body {
+	background-color: black;
+	position: relative;
+	margin: 0px;
+	width: 100%;
+	height: 99%;
+	position: absolute;
+	padding: 0;
+	background-image: url("pictures/main_small.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+}
+
+img {
+	display: block;
+	margin: auto;
+	width: 100%;
+}
+
+#cover {
+	width: 100%;
+	margin: auto;
+	position: absolute;
+	padding: 0;
+	top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#isle {
+	opacity: 0;
+	position: absolute;
+	width: 6%;
+	height: 10%;
+	left: 8.1%;
+	top: 52.1%;
+	cursor: pointer;
+}
+
+#fossil {
+	opacity: 0;
+	position: absolute;
+	width: 6.1%;
+	height: 10%;
+	left: 14.5%;
+	top: 52%;
+	cursor: pointer;
+}
+
+#leaf {
+	opacity: 0;
+	position: absolute;
+	width: 6%;
+	height: 10%;
+	left: 20.82%;
+	top: 52.1%;
+	cursor: pointer;
+}
+
+#artist {
+	opacity: 0;
+	position: absolute;
+	width: 6.5%;
+	height: 10.8%;
+	left: 27.25%;
+	top: 52.6%;
+	cursor: pointer;
+}
+
+#musician {
+	opacity: 0;
+	position: absolute;
+	width: 6.25%;
+	height: 16%;
+	left: 34.1%;
+	top: 51.25%;
+	cursor: pointer;
+}
+
+#space {
+	opacity: 0;
+	position: absolute;
+	width: 5.8%;
+	height: 16%;
+	left: 40.95%;
+	top: 53%;
+	cursor: pointer;
+}
+
+#time {
+	opacity: 0;
+	position: absolute;
+	width: 5.85%;
+	height: 26%;
+	left: 47.15%;
+	top: 52.7%;
+	cursor: pointer;
+}
+
+#mask {
+	opacity: 0;
+	position: absolute;
+	width: 6.3%;
+	height: 16%;
+	left: 53.12%;
+	top: 51.1%;
+	cursor: pointer;
+}
+
+#prisoner {
+	opacity: 0;
+	position: absolute;
+	width: 6.2%;
+	height: 16%;
+	left: 59.65%;
+	top: 51.4%;
+	cursor: pointer;
+}
+
+#traveler {
+	opacity: 0;
+	position: absolute;
+	width: 5.9%;
+	height: 16%;
+	left: 66.4%;
+	top: 53.5%;
+	cursor: pointer;
+}
+
+#child {
+	opacity: 0;
+	position: absolute;
+	width: 5.8%;
+	height: 16%;
+	left: 72.8%;
+	top: 52.8%;
+	cursor: pointer;
+}
+
+#dream {
+	opacity: 0;
+	position: absolute;
+	width: 5.95%;
+	height: 16%;
+	left: 79.2%;
+	top: 52.1%;
+	cursor: pointer;
+}
+
+#shadow {
+	opacity: 0;
+	position: absolute;
+	width: 6%;
+	height: 16%;
+	left: 85.4%;
+	top: 52%;
+	cursor: pointer;
+}
+
+#rel_link {
+	font-family: customize;
+	float: right;
+	margin-right: 0.5%;
+	margin-top: 2%;
+	color: white;
+	font-size: 100%;
+	cursor: pointer;
+}
+
+#rel_panel {
+	visibility: hidden;
+	position: absolute;
+	width: 84%;
+	height: 96%;
+	left: 8%;
+	top: 2%;
+	background-image: url('pictures/relationship_img.jpg');	
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+#info-panel {
+	font-family: customize;
+	width: 94%;
+	height: 80%;
+	margin: 5% 3%;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+}
+
+#back {
+	visibility: visible;
+	position: absolute;
+	opacity: 0.5;
+	top: 45%;
+	left: 2%;
+	width: 5%;
+}
+
+#next {
+	visibility: visible;
+	position: absolute;
+	opacity: 0.5;
+	top: 45%;
+	right: 2%;
+	width: 5%;
+}
+
+#canvas_pic {
+	opacity: 0;
+	width: 24.8%;
+	height: 100%;
+	position: absolute;
+
+}
+
+#canvas_poem {
+	position: absolute;
+	color: white;
+	width: 50%;
+	height: 60%;
+	text-align: center;
+	left: 44%;
+	top: 38%;
+}
+
+#canvas_sign {
+	visibility: hidden;
+	position: absolute;
+	width: 12%;
+	right: 25.3%;
+	top: 5%;
+
+}
+
+#close {
+    position: absolute;
+	top: 1.2%;
+	right: 0.7%;
+	width: 1.2%;
+}
+
+#canvas_pagination {
+	font-family: customize;
+    position: absolute;
+    padding: 3px 3px;
+	color: white;
+	right: 1%;
+	bottom: 1%;
+	margin: 0;
+	font-size: 120%;
+}
+
+#play_sign {
+	position: absolute;
+	left: 29%;
+	top: 0%;
+	width: 4%;
+	margin-top: 0.67%;
+	color: white;
+}
+
+#narrator {
+	position: absolute;
+	left: 26%;
+	top: 1%;
+	width: 2%;
+}
+
+#title_character {
+	font-family: customize;
+	visibility: visible;
+	position: absolute;
+	width: 30%;
+	height: 6%;
+	left: 42%;
+	top: 88%;
+	color: white;
+	font-size: 144%;
+}
+
+
+
+
+

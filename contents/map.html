@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style_map.css">
+		<title>Isles of Solitude</title>
+	</head>
+	<body id = "main" onresize = "adjustSigns();" onload = "adjustSigns();">
+		<p id = "rel_link" onclick = "document.getElementById('rel_panel').style.visibility='visible';document.getElementById('back').style.visibility='hidden';
+						document.getElementById('next').style.visibility='hidden';document.getElementById('main').style.backgroundImage='none';document.getElementById('title_map').style.visibility='hidden';">Relationships</p>
+		<div id = "rel_panel" style = "visibility: hidden;">
+			<img id = "rel_close" src = "pictures/close_white.png" alt = "close" style = "position:absolute;top:1.2%;right:0.7%;width:1.2%;cursor: pointer;" onclick = "document.getElementById('rel_panel').style.visibility='hidden';document.getElementById('back').style.visibility='visible';
+						document.getElementById('title_map').style.visibility='visible';
+						document.getElementById('next').style.visibility='visible';document.getElementById('main').style.backgroundImage='url(&quot;pictures/bg_map.jpg&quot;)';" />
+		</div>
+		<div id = "back" onmouseover = "document.getElementById('back').style.opacity=1;" onmouseout = "document.getElementById('back').style.opacity=0.5;">
+			<a href="home.html">
+				<img src = "pictures/back.png" />
+			</a>
+		</div>
+		<div id = "next" onmouseover = "document.getElementById('next').style.opacity=1;" onmouseout = "document.getElementById('next').style.opacity=0.5;">
+			<a href="other.html">
+				<img src = "pictures/next.png" />
+			</a>
+		</div>
+		<img id = "map_isle" src = "pictures/isle_sign.png"  alt = "isle" onmouseover = "showCharacter(0);" onmouseout = "hideCharacter(0);" onclick = "changeMap(0);" />
+		<img id = "map_fossil" src = "pictures/fossil_sign.png"  alt = "fossil" onmouseover = "showCharacter(1);" onmouseout = "hideCharacter(1);" onclick = "changeMap(1);" />
+		<img id = "map_leaf" src = "pictures/leaf_sign.png"  alt = "leaf" onmouseover = "showCharacter(2);" onmouseout = "hideCharacter(2);" onclick = "changeMap(2);" />
+		<img id = "map_artist" src = "pictures/artist_sign.png"  alt = "artist" onmouseover = "showCharacter(3);" onmouseout = "hideCharacter(3);" onclick = "changeMap(3);" />
+		<img id = "map_musician" src = "pictures/musician_sign.png"  alt = "musician" onmouseover = "showCharacter(4);" onmouseout = "hideCharacter(4);" onclick = "changeMap(4);" />
+		<img id = "map_space" src = "pictures/space_sign.png"  alt = "space" onmouseover = "showCharacter(5);" onmouseout = "hideCharacter(5);" onclick = "changeMap(5);" />
+		<img id = "map_time" src = "pictures/time_sign.png"  alt = "time" onmouseover = "showCharacter(6);" onmouseout = "hideCharacter(6);" onclick = "changeMap(6);" />
+		<img id = "map_mask" src = "pictures/mask_sign.png"  alt = "mask" onmouseover = "showCharacter(7);" onmouseout = "hideCharacter(7);" onclick = "changeMap(7);" />
+		<img id = "map_prisoner" src = "pictures/prisoner_sign.png"  alt = "prisoner" onmouseover = "showCharacter(8);" onmouseout = "hideCharacter(8);" onclick = "changeMap(8);" />
+		<img id = "map_traveler" src = "pictures/traveler_sign.png"  alt = "traveler" onmouseover = "showCharacter(9);" onmouseout = "hideCharacter(9);" onclick = "changeMap(9);" />
+		<img id = "map_child" src = "pictures/child_sign.png"  alt = "child" onmouseover = "showCharacter(10);" onmouseout = "hideCharacter(10);" onclick = "changeMap(10);" />
+		<img id = "map_dream" src = "pictures/dream_sign.png"  alt = "dream" onmouseover = "showCharacter(11);" onmouseout = "hideCharacter(11);" onclick = "changeMap(11);" />
+		<img id = "map_shadow" src = "pictures/shadow_sign.png"  alt = "shadow" onmouseover = "showCharacter(12);" onmouseout = "hideCharacter(12);" onclick = "changeMap(12);" />
+		<div id = "map_img" style = "visibility: hidden;">
+			<img id = "map_close" src = "pictures/close_white.png" alt = "close" style = "position:absolute;top:1.5%;right:1%;width:3%;cursor: pointer;" onclick = "document.getElementById('map_img').style.visibility='hidden'; document.getElementById('rel_link').style.visibility = 'visible';
+				document.getElementById('map_left').style.visibility='hidden'; document.getElementById('map_right').style.visibility='hidden';document.getElementById('map_caption').style.visibility='hidden';" />
+			<div id = "map_left" onmouseover = "document.getElementById('map_left').style.opacity=1;" onmouseout = "document.getElementById('map_left').style.opacity=0.25;" onclick = "changeMap(charNum-1);">
+				<img src = "pictures/back.png" />
+			</div>
+			<div id = "map_right" onmouseover = "document.getElementById('map_right').style.opacity=1;" onmouseout = "document.getElementById('map_right').style.opacity=0.25;" onclick = "changeMap(charNum+1);">
+				<img src = "pictures/next.png" />
+			</div>
+		</div>
+		<div id = "map_caption" sytle = "visibility: hidden;">
+			<p id = "caption">caption</p>
+		</div>
+		<div id = "title_map">
+			<p>MAPS</p>
+		</div>
+		<script>
+			var charSource = ['isle', 'fossil', 'leaf', 'artist', 'musician', 'space', 'time', 'mask', 'prisoner', 'traveler', 'child', 'dream', 'shadow'];
+			var charNum = 0;
+			function showCharacter(id) {
+				//console.log("inside showCharacter");
+				if (document.getElementById('rel_panel').style.visibility == 'hidden') {
+					//console.log("if true");
+					document.getElementById("map_"+charSource[id]).style.opacity = 1;
+				}
+			}
+			function hideCharacter(id) {
+				document.getElementById("map_"+charSource[id]).style.opacity = 0;
+			}
+			function adjustSigns() {
+				var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+				var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+				var pHeight;
+				var divident = 32;
+				var i = 0;
+				for (i = 0; i < 13; i++) {
+					switch (i) {
+						case 0:
+							pHeight = 0.435;
+							divident = 31.5;
+							adaptedTop = (pHeight-(width/height-2.0813)/divident)*100+"%";
+							break;
+						case 1:
+							pHeight = 0.191;
+							divident = 6.7;
+							adaptedTop = (pHeight-(width/height-2.0813)/divident)*100+"%";
+							break;
+						case 2:
+							pHeight = 0.295;
+							divident = 10.2;
+							adaptedTop = (pHeight-(width/height-2.0813)/divident)*100+"%";
+							break;
+						case 3:
+							pHeight = 0.434;
+							divident = 31.5;
+							adaptedTop = (pHeight-(width/height-2.0813)/divident)*100+"%";
+							break;
+						case 4:
+							pHeight = 0.578;
+							divident = 27;
+							adaptedTop = (pHeight+(width/height-2.0813)/divident)*100+"%";			
+							break;
+						case 5:
+							pHeight = 0.678;
+							divident = 11.8;
+							adaptedTop = (pHeight+(width/height-2.0813)/divident)*100+"%";								
+							break;
+						case 6:
+							pHeight = 0.717;
+							divident = 9.6;
+							adaptedTop = (pHeight+(width/height-2.0813)/divident)*100+"%";
+							break;
+						case 7:
+							pHeight = 0.68;
+							divident = 11.6;
+							adaptedTop = (pHeight+(width/height-2.0813)/divident)*100+"%";
+							break;
+						case 8:
+							pHeight = 0.577;
+							divident = 27;
+							adaptedTop = (pHeight+(width/height-2.0813)/divident)*100+"%";
+							break;
+						case 9:
+							pHeight = 0.44;
+							divident = 34.5;
+							adaptedTop = (pHeight-(width/height-2.0813)/divident)*100+"%";
+							break;
+						case 10:
+							pHeight = 0.296;
+							divident = 10.2;
+							adaptedTop = (pHeight-(width/height-2.0813)/divident)*100+"%";
+							break;
+						case 11:
+							pHeight = 0.193;
+							divident = 6.75;
+							adaptedTop = (pHeight-(width/height-2.0813)/divident)*100+"%";
+							break;
+						case 12:
+							pHeight = 0.156;
+							divident = 6.04;
+							adaptedTop = (pHeight-(width/height-2.0813)/divident)*100+"%";
+							break;
+					}
+					document.getElementById("map_"+charSource[i]).style.top = adaptedTop;
+				}
+				var adjustedHeight = (0.78+(width/height-2.0813)/8)*100+"%";
+				document.getElementById('map_img').style.height = adjustedHeight;
+
+			}
+			function changeMap(id) {
+				if (id == -1) id = 12;
+				if (id == 13) id = 0;
+				charNum = id;
+				document.getElementById('map_img').style.visibility = 'visible';
+				document.getElementById('map_left').style.visibility = 'visible';
+				document.getElementById('map_right').style.visibility = 'visible';
+				document.getElementById('map_caption').style.visibility = 'visible';
+				document.getElementById('caption').innerHTML = id + '.&nbsp;' + charSource[id].toUpperCase() + ' ISLE';
+				if (id == 0) {
+					document.getElementById('caption').innerHTML = id + '.&nbsp;' + charSource[id].toUpperCase();
+				}
+				document.getElementById('rel_link').style.visibility = 'hidden';
+				var map_src = 'pictures/map/map_' + charSource[id] + '.jpg';
+				document.getElementById('map_img').style.backgroundImage = "url('" + map_src + "')";
+			}
+		</script>
+	</body>
+</html>
